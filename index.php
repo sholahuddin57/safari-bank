@@ -1,3 +1,8 @@
+<?php
+    //ini adalah variabel PHP
+    $nama_sistem = "Safari Bank Enterprise";
+    $tahun = date("Y");
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Selamat Datang di Safari Bank</h1>
+    <h1>Selamat Datang di <?php echo $nama_sistem;?></h1>
     <a href="profile.html" class="text-decoration-none text-success fw-bold mb-4 d-inline-block">
         Profil Developer ->
     </a>

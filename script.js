@@ -23,3 +23,26 @@ btnPinjaman.addEventListener('click', function(e)  {
 btnInvestasi.addEventListener('click', function(e)  {
     tampilkanNotifikasi(e, 'Investasi Safari');
 });
+
+// Upgrade Fungsi dengan Fetch API (Modern JavaScript)
+function tampilkanNotifikasi(event, namaProduk) {
+    event.preventDefault(); // Mencegah lompat ke atas
+    
+    // Siapkan paket data yang akan dikirim
+    const formData = new FormData();
+    formData.append('nama_produk', namaProduk);
+
+    // Kirim data ke PHP di belakang layar menggunakan Fetch
+    fetch('proses_pengajuan.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(hasil => {
+        if(hasil === "Sukses") {
+            alert(`Terima kasih! Pengajuan ${namaProduk} Anda telah masuk ke database kami.`);
+        } else {
+            alert("Mohon maaf, terjadi kesalahan pada sistem bank kami.");
+        }
+    });
+}

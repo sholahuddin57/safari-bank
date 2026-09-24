@@ -14,6 +14,6 @@ if (!$koneksi) {
     die("Koneksi database gagal: " . mysqli_connect_error());
 } else {
     // Jika berhasil, tampilkan pesan sukses
-    echo "Koneksi ke pangkalan data Safari Bank sukses!";
+   // echo "Koneksi ke pangkalan data Safari Bank sukses!";
 }
 ?>

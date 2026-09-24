@@ -25,6 +25,7 @@ $hasil = mysqli_query($koneksi, $query);
                             <th>No ID</th>
                             <th>Nama Produk</th>
                             <th>Waktu Pengajuan</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,6 +36,9 @@ $hasil = mysqli_query($koneksi, $query);
                             echo "<td>" . $baris['id'] . "</td>";
                             echo "<td>" . $baris['nama_produk'] . "</td>";
                             echo "<td>" . $baris['tanggal_pengajuan'] . "</td>";
+                            // 4. Tambahkan tombol hapus dengan parameter ID
+                            echo "<td>
+                                <a href='hapus.php?id=" . $baris['id'] . "' class='btn btn-danger btn-sm' onclick=\"return confirm('Apakah Anda yakin ingin menghapus pengajuan ini?');\">Hapus</a></td>";
                             echo "</tr>";
                         }
                         ?>
@@ -45,4 +49,4 @@ $hasil = mysqli_query($koneksi, $query);
         </div>
     </div>
 </body>
-</html>
+</html> 
